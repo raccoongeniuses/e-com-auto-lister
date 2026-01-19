@@ -1,0 +1,13 @@
+{
+    "Servers": {
+        "1": {
+            "Name": "E-Com Auto Lister DB",
+            "Group": "Servers",
+            "Host": "postgres",
+            "Port": 5432,
+            "MaintenanceDB": "ecom_db",
+            "Username": "user",
+            "SSLMode": "prefer"
+        }
+    }
+}

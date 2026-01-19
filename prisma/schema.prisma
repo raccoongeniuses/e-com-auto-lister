@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Listing {
+  id                 String   @id @default(uuid())
+  imageUrl           String
+  generatedTitle     String
+  generatedDescription String
+  platform           ProjectPlatform
+  createdAt          DateTime @default(now())
+}
+
+enum ProjectPlatform {
+  Shopee
+  Tokopedia
+  TikTok
+}
+
+model EcomDb {
+  id                   String          @id @default(uuid())
+  imageUrl             String
+  generatedTitle       String
+  generatedDescription String
+  hashtags             String[]
+  platform             ProjectPlatform
+  createdAt            DateTime        @default(now())
+
+  @@map("ecom_db")
+}
